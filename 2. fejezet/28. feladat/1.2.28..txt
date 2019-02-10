@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+
+    int bit = ((ch1 >> 5) & 0x1);
+    cout << "Az 5. bit erteke: " << bit;
+
+    return 0 ;
+}

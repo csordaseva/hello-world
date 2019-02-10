@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+
+    if(ch1 >= 97 && ch1 <= 122){
+        cout << "A karakter angol kisbetu";
+    }
+    else{
+        cout << "A karakter nem angol kisbetu";
+    }
+    return 0 ;
+}
+

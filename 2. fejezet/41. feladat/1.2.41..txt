@@ -1,0 +1,6 @@
+Ekvivalens-e a két kifejezés?
+
+x *= y + 1    => x = x * (y+1)
+x = x * y + 1
+
+nem ekvivalensek!

@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a, b , c;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+    cout << "Kerem a harmadik szamot: ";
+    cin >> c;
+    if(a < b && a < c){
+        cout << "A  ket legnagyobb szam: " << b << ", " << c << endl;
+    }
+    else if(b < a && b < c){
+        cout << "A  ket legnagyobb szam: " << a << ", " << c << endl;
+    }
+    else{
+         cout << "A  ket legnagyobb szam: " << b << ", " << c << endl;
+         }
+    return 0 ;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+
+    if(ch1 >= 97 && ch1 <= 122){
+        cout << (char)toupper(ch1);
+    }
+    else if(ch1 >= 65 && ch1 <= 90){
+        cout << (char)tolower(ch1);
+    }
+    else {
+        cout << "Hiba! (A megadott karakter nem angol betu)";
+    }
+    return 0 ;
+}
+

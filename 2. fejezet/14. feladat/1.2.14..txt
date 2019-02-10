@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a, b, c;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+    cout << "Kerem a harmadik szamot: ";
+    cin >> c;
+
+    if(a % b == 0 && a % c !=0){
+        cout << "Az elso szam oszthato a masodikkal, de a harmadikkal nem" << endl;
+    }
+    else{
+        cout << "Nem igaz, hogy az elso szam oszthato a masodikkal, de a harmadikkal nem" << endl;
+    }
+
+    return 0 ;
+}

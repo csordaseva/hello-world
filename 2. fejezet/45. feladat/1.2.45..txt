@@ -1,0 +1,8 @@
+int a = -1;
+int b = 0 ;
+int c = -1;
+++a && b++ && c--;
+
+a = 0, mert megnöveljük
+b = 1, mert megnöveljük
+c = -2, mert csökkentjük

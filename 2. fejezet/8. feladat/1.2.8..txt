@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+
+    if(a < 0){
+        cout << "A szam negativ" << endl;
+    }
+    else{
+        cout << "A szam nem negativ" << endl;
+    }
+    a++;
+    cout << "Az elso szam erteke az elozo kiiratas utan: " << a << endl;
+
+    return 0 ;
+}

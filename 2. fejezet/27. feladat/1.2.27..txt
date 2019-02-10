@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int a, b, c;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+    cout << "Kerem a harmadik szamot: ";
+    cin >> c;
+
+    int negyzetosszeg = a*a + b*b;
+    if(negyzetosszeg > c){
+       cout << "A ket szam negyzetosszege (" << negyzetosszeg << ") nagyobb, mint a harmadik szam " << endl;
+    }
+    else{
+        cout << "A ket szam negyzetosszege (" << negyzetosszeg << ") nem nagyobb, mint a harmadik szam " << endl;
+    }
+
+    return 0 ;
+}
+

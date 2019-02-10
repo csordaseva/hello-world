@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+
+    if(ch1 >= 48 && ch1 <= 57 || ch1 == 69 || ch1 == 101 || ch1 == 43 || ch1 == 45 || ch1 == 46){
+        cout << "A karakter szerepelhet lebegopontos szam abrazolasanal";
+    }
+    else{
+        cout << "A karakter nem szerepelhet lebegopontos szam abrazolasanal";
+    }
+    return 0 ;
+}
+

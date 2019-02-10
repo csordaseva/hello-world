@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a, b;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+
+    if(a == b+2){
+        cout << "Igen, az elso 2-vel nagyobb, mint a masodik" << endl;
+    }
+    else{
+        cout << "Nem, az elso nem 2-vel nagyobb, mint a masodik" << endl;
+    }
+
+    return 0 ;
+}

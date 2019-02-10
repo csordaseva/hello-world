@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int a, b;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+
+    int ellentett = (a+b)-2*(a+b);
+
+    cout << "A ket szam osszegenek ellentettje: " << ellentett << endl;
+    return 0 ;
+}
+

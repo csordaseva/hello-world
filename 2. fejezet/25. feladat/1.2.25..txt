@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int a;
+
+    cout << "Kerek egy szamot: ";
+    cin >> a;
+
+    cout << "A szam ellentettje: " << a-2*a << endl;
+    return 0 ;
+}
+

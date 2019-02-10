@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+
+    if(ch1 >= 48 && ch1 <= 57){
+        cout << "A karakter szamjegy";
+    }
+    else{
+        cout << "A karakter nem szamjegy";
+    }
+    return 0 ;
+}
+

@@ -1,0 +1,4 @@
+4 < 5 < 3
+
+balról jobbra értékelõdik ki, 4<5 -> igaz
+igaz < 3 -> gondolom két különbözõ típust nem tud összehasonlítani. (vagy ami nem 0 az igaz?)

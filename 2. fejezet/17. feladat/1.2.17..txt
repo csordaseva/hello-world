@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a, b, c;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> a;
+    cout << "Kerem a masodik szamot: ";
+    cin >> b;
+    cout << "Kerem a harmadik szamot: ";
+    cin >> c;
+
+    /*Irja ki a kepernyore, hogy igaz-e az, hogy ha az elso szamot bitenkent balra 2-vel,
+    majd a masodikat jobbra 3-mal eltoljuk, es a ket szamot osszeadjuk,
+    akkor az eredmeny oszthato-e a harmadik szammal:*/
+
+    a << 2;
+    b >> 3;
+    int osszeg = a+b;
+
+    if(osszeg % c == 0) {
+        cout << "Oszthato" << endl;
+    }
+    else{
+        cout << "Nem oszthato" << endl;
+    }
+
+    return 0 ;
+}

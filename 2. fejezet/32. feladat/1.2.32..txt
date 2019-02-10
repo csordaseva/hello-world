@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+    int bit;
+    string bitstream;
+    cout << "A bitminta a modositas elott: ";
+    for(int i = 7; i>=0; i--){
+    bit = ((ch1 >> i) & 0x1);
+    cout << bit;
+    bitstream += bit;
+    }
+    cout << endl;
+    cout << "A bitminta a modositas utan:  ";
+
+    for(int i = bitstream.length()-1; i>=0; i--){
+    if(i==6){
+        cout << "0";
+    }
+    else {
+            cout << ((ch1 >> i) & 0x1);
+    }
+    }
+    return 0 ;
+}

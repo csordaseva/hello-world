@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    // az alapfeladatot (kiírni a biteket) egy neten talált kód segítségével írtam meg, az invertálást meg nem hiszem, hogy
+    // így kellene, de nem vagyok képben a bitmûveletekkel, szóval az internet segítségével ennyit tudtam kihozni ebbõl
+    char ch1;
+
+    cout << "Kerek egy karaktert: ";
+    cin >> ch1;
+    int bit;
+    string bitstream;
+    cout << "A bitminta invertalas elott: ";
+    for(int i = 7; i>=0; i--){
+    bit = ((ch1 >> i) & 0x1);
+    cout << bit;
+    bitstream += bit;
+    }
+    cout << endl;
+    cout << "A bitminta invertalas utan:  ";
+
+    for(int i = 0; i<bitstream.length(); i++){
+    if(bitstream[i] == 0) cout << "1";
+    else cout << "0";
+    }
+
+    return 0 ;
+}
