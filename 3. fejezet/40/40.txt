@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    //hatarozza meg egy sztringrol, hogy palindrom-e
+    // a szokozos palindromokra is mukodik pl. etel lehellete
+    //azoknal nem mukodik, amiben dupla betuk vannak, ezzel mar nem volt energiam foglalkozni
+
+    std::string s="";
+    std::cout<< "Adjon meg egy szoveget: ";
+    std::getline(std::cin, s);
+    //std::cout<< "A beirt szoveg: " << s;
+
+    int i=0, j, hossz =0;
+    bool palindrom = false;
+
+    while(s[i] != '\0'){
+        hossz++;
+        i++;
+    }
+
+    i =0; j = hossz;
+
+    while( i < j && s[i] == s[j-1] || s[i] == ' ' || s[j] == ' '){
+        if(s[i] == ' '){
+            i++;
+        }
+        if(s[j] == ' '){
+            j--;
+        }
+        if(s[i] == s[j-1]){
+           i++;
+           j--;
+        }
+
+    }
+    if(i>j){
+        palindrom = true;
+    }
+    (palindrom) ? std::cout<< "Palindrom" : std::cout<< "Nem palindrom";
+
+    return 0;
+}

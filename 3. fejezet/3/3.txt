@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i1;
+    int i,j;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> i1;
+
+    for(i=0; i <= i1; i++){
+            for(j =0; j<i; j++){
+                cout << "*";
+                if(j == i-1){
+                    cout << "\n";
+                }
+            }
+    }
+    return 0;
+}

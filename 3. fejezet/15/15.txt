@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+
+bool prime(int szam);
+
+int main()
+{
+    //Hatarozza meg az i1 utani elso primszamot
+    // tudom, hogy "csaltam", de fuggveny nelkul nem volt otletem, hogy hogy csinaljam meg
+    int i1;
+
+    std::cout << "Kerem a szamot: ";
+    std::cin >> i1;
+    int cv= i1+1;
+    int elsoprim;
+    while(!prime(cv)){
+        cv++;
+        elsoprim = cv;
+    }
+
+    std::cout << "A(z) " << i1 << " utani elso primszam: " << cv;
+
+    return 0;
+}
+
+bool prime(int szam){
+    int i = 2;
+    double gyok = std::sqrt(szam);
+    bool prim;
+
+    while(i <= gyok && szam%i != 0){
+        i++;
+    }
+    (i<= gyok || szam == 1) ? prim = false : prim =true;
+    return prim;
+}

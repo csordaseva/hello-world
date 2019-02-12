@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //tomb elemeinek atlaga, szorasa,legnagyobb es legkisebb elem kulonbsege
+    int n=10;
+    double tomb[] = {4, 20, 7, 6, 2, 3, 61, 5, 6, 12};
+
+    double atlag, szoras, osszeg =0, variancia=0;
+    int i,kulonbseg, minimum=999999999, maximum= -999999999;
+
+    std::cout<< "A tomb elemei:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+         if(tomb[i]> maximum){
+            maximum = tomb[i];
+         }
+         if(tomb[i] < minimum){
+            minimum = tomb[i];
+         }
+         osszeg+=tomb[i];
+    }
+
+    kulonbseg = maximum-minimum;
+    atlag = osszeg/n;
+
+    for(i=0; i<n;i++){
+        variancia+=std::pow(std::abs(tomb[i]-atlag),2);
+    }
+    szoras = sqrt(variancia/n);
+
+    std::cout<< "\nAtlag: " << atlag << std::endl;
+    std::cout<< "Szoras: " << szoras << std::endl;
+    std::cout<< "Legnagyobb es legkisebb elem kulonbsege: " << kulonbseg << std::endl;
+
+    return 0;
+}
+

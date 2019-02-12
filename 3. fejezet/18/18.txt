@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+
+bool negyzetszame(int szam);
+
+int main()
+{
+    //Szamolja meg, hogy i1 es i2 kozott (ezeket is beleertve) hany negyzetszam van
+
+    int i1, i2;
+
+    std::cout << "Kerem az elso szamot: ";
+    std::cin >> i1;
+    std::cout << "Kerem a masodik szamot: ";
+    std::cin >> i2;
+    int i, db=0;
+    for(i = i1; i<=i2; i++){
+        if(negyzetszame(i)){
+            db++;
+        }
+    }
+
+    std::cout << "A [" << i1 << ", " << i2 << "] intervallumban " << db << " negyzetszam van.";
+
+    return 0;
+}
+
+bool negyzetszame(int szam){
+    int i=1;
+    bool negyzetszam;
+    double gyok = std::sqrt(szam);
+
+    while(i <= gyok && i*i!=szam){
+        i++;
+    }
+    (i > gyok) ? negyzetszam = false : negyzetszam = true;
+    return negyzetszam;
+}

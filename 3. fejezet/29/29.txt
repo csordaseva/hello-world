@@ -1,0 +1,45 @@
+#include <iostream>
+
+int main()
+{
+    //egyszeru menu megvalositas, kiegeszive azzal, hogy midnen valasztas utan visszater a menupont valasztashoz es van kilepes
+
+    int menupont;
+    char ch1;
+    std::cout << "Elso menupont: 1\n";
+    std::cout << "Masodik menupont: 2\n";
+    std::cout << "Harmadik menupont: 3\n";
+    std::cout << "Negyedik menupont: 4\n";
+    std::cout << "Kilepes: 5\n";
+
+    do{
+        std::cout << "Kerem valasszon a menupontok kozul: ";
+        std::cin >> menupont;
+
+
+        switch(menupont){
+            case 1:
+                std::cout << "Belepett az elso menupontba. Gratulalok!\n";
+                break;
+            case 2:
+                std::cout << "Belepett a masodik menupontba. Gratulalok!\n";
+                break;
+            case 3:
+                std::cout << "Belepett a harmadik menupontba. Gratulalok!\n";
+                break;
+            case 4:
+                std::cout << "Belepett a negyedik menupontba. Gratulalok!\n";
+                break;
+            case 5:
+                std::cout << "Koszi, hogy kiprobaltad ezt a csodas programot, viszlat!";
+                break;
+            default:
+                std::cout << "Helytelen adat\n";
+        }
+    }
+    while(menupont != 5);
+
+
+
+    return 0;
+}

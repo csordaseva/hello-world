@@ -1,0 +1,34 @@
+#include <iostream>
+
+int main()
+{
+    //egyszeru menu megvalositas
+
+    int menupont;
+    std::cout << "Elso menupont: 1\n";
+    std::cout << "Masodik menupont: 2\n";
+    std::cout << "Harmadik menupont: 3\n";
+    std::cout << "Negyedik menupont: 4\n";
+
+    std::cout << "Kerem valasszon a menupontok kozul: ";
+    std::cin >> menupont;
+
+
+            switch(menupont){
+    case 1:
+        std::cout << "Belepett az elso menupontba. Gratulalok!\n";
+        break;
+    case 2:
+         std::cout << "Belepett a masodik menupontba. Gratulalok!\n";
+        break;
+    case 3:
+         std::cout << "Belepett a harmadik menupontba. Gratulalok!\n";
+        break;
+    case 4:
+         std::cout << "Belepett a negyedik menupontba. Gratulalok!\n";
+        break;
+    default:
+        std::cout << "Helytelen adat\n";
+    }
+    return 0;
+}

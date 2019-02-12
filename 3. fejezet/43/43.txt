@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+    //tomb elemeinek eltolasa balra, az elso elem pedig a tomb vegere kerul
+    int n=10, i;
+    int tomb[n] = {5,20,6,7,2,3,63,5,6,12};
+    int ertek;
+    bool bennevan = false;
+
+    std::cout<< "Az tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+
+    std::cout<< "\nAdjon meg egy erteket: ";
+    std::cin >> ertek;
+
+    for(i = 0; i<n;i++){
+        if(tomb[i] == ertek){
+            bennevan = true;
+        }
+    }
+
+    std::cout<< "A(z) " << ertek << " ";
+
+    (bennevan) ? std::cout<< "benne van a tombben" : std::cout<< "nincs benne a tombben";
+
+    return 0;
+}

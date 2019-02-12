@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    //hatarozza meg egy sztring hosszat (fuggveny nelkul)
+
+    std::string s="";
+    std::cout<< "Adjon meg egy szoveget: ";
+    std::getline(std::cin, s);
+    std::cout<< "A beirt szoveg: " << s;
+
+    int i=0, hossz =0;
+
+    while(s[i] != '\0'){
+        hossz++;
+        i++;
+    }
+
+    std::cout<< "\nA beirt karakterlanc hossza: " << hossz;
+
+    return 0;
+}

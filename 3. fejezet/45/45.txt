@@ -1,0 +1,35 @@
+#include <iostream>
+
+int main()
+{
+    //rendezett tombben kereses - logaritmikus kereses
+    int i,akt, n=10, ertek;
+    int tomb[n] = {2, 9, 15, 23, 48, 57, 61, 70, 84, 97};
+    bool bennevan = false;
+
+    std::cout<< "Az tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+
+    std::cout<< "\nAdjon meg egy erteket: ";
+    std::cin >> ertek;
+    i =0;
+    while(!bennevan && i<=n){
+        akt = (i+n)/2;
+        if(tomb[akt] == ertek){
+            bennevan = true;
+        }
+        if(tomb[akt] < ertek){
+            i = akt+1;
+        }if(tomb[akt] > ertek){
+            n = akt-1;
+        }
+    }
+
+    std::cout<< "A(z) " << ertek << " ";
+
+    (bennevan) ? std::cout<< "benne van a tombben" : std::cout<< "nincs benne a tombben";
+
+    return 0;
+}

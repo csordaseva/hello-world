@@ -1,0 +1,50 @@
+#include <iostream>
+
+int main()
+{
+    //egyik tomb reszhalmaza-e a masiknak
+    int i, j, n=4, m=7;
+    int tomb[] = {2,3,7,8};
+    int tomb2[] = {2,3,7,8,1, 12, 13};
+
+    bool reszhalmaza=true;
+
+    std::cout<< "Az elso tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+
+    std::cout<< "\nA masodik tomb:\n";
+    for(i = 0; i<m; i++){
+         std::cout << tomb2[i] << " ";
+    }
+    i=0;
+    while(i<n && reszhalmaza){
+        j=0;
+        while(j<m && tomb[i] != tomb2[j]){
+            j++;
+        }
+        if(j >= m){
+            reszhalmaza= false;
+        }
+        i++;
+    }
+    (reszhalmaza) ? std::cout<< "\nAz elso tomb reszhalmaza a masodiknak." : std::cout << "\nAz elso tomb nem reszhalmaza a masodiknak";
+
+    reszhalmaza=true;
+    i=0; ;
+    while(i<m && reszhalmaza){
+        j=0;
+        while(j<n && tomb2[i] != tomb[j]){
+            j++;
+        }
+        if(j>=n){
+            reszhalmaza = false;
+        }
+        i++;
+    }
+     (reszhalmaza) ? std::cout<< "\nA masodik tomb reszhalmaza az elsonek." : std::cout << "\nA masodik tomb nem reszhalmaza az elsonek";
+
+    return 0;
+}
+

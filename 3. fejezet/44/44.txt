@@ -1,0 +1,3 @@
+Az elozo feladatban (43 - tombben keresunk egy erteket) a legjobb esetben egy lepesben megtalaljuk a keresett erteket (ha az elso elem rogton az, amit keresunk).
+Legrosszabb esetben nincs benne a tombben, igy a tomb meretevel aranyos a futasi ido: O(N)
+Atlagos esetben nem tudom :D O(N/2)-re tippelnek

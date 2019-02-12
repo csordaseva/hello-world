@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i1, i2;
+
+    cout << "Kerem az elso szamot: ";
+    cin >> i1;
+    cout << "Kerem a masodik szamot: ";
+    cin >> i2;
+    int osszeg=0;
+    for(i1; i1 <= i2; i1++){
+        osszeg+= i1;
+    }
+    cout << "Az osszeg: " << osszeg << endl;
+    return 0;
+}

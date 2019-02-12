@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //Hatarozza meg, hogy i1 primszam-e
+    int i1;
+
+    std::cout << "Kerem a szamot: ";
+    std::cin >> i1;
+
+    int i = 2;
+    double gyok = std::sqrt(i1);
+
+    while(i <= gyok && i1%i != 0){
+        i++;
+    }
+    (i<= gyok || i1 == 1) ? std::cout << "A(z) " << i1 << " nem primszam." : std::cout << "A(z) " << i1 << " primszam.";
+
+    return 0;
+}

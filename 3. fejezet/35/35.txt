@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main()
+{
+    //tomb elso es legkisebb elemenek csereje
+    int i, minimum= 999999999, minindex, n =10;
+    int tomb[n];
+    for(i = 0; i<n;i++){
+        std::cout << "Kerem a(z) " << i+1 << ". szamot: ";
+        std::cin >> tomb[i];
+    }
+    std::cout << "A csere elott:\n";
+    for(i = 0; i<n; i++){
+            std::cout << tomb[i] << " ";
+            if(tomb[i] < minimum){
+                minimum = tomb[i];
+                minindex = i;
+            }
+    }
+    std::cout << "\nAz elso es a legkisebb elem csereje utan:\n";
+
+    int csere;
+    csere = tomb[0];
+    tomb[0] = tomb [minindex];
+    tomb[minindex] = csere;
+
+    for(i = 0; i < n; i++){
+        std::cout << tomb[i] << " ";
+    }
+    return 0;
+}

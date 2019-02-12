@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main()
+{
+    //Olvasson be szamokat a billentyuzetrol 0 vegjelig es szamolja meg, hogy hany paros szam van kozottuk
+    int szam, db = 0;
+    do{
+        std::cout << "Kerek egy szamot: ";
+        std::cin >> szam;
+        if(szam % 2 ==0 && szam != 0){
+            db++;
+        }
+    }while(szam != 0);
+
+    std::cout << db << " paros szamot olvastam be";
+
+    return 0;
+}

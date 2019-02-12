@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //tomb leggyakoribb elemei
+    int n=10, i,j, db=1;
+    int tomb[] = {4, 20, 7, 6, 2, 3, 61, 5, 6, 2};
+    int gyakorisagok[n];
+    int leggyakoribb_elemek[n];
+
+    std::cout<< "A tomb elemei:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+    for(i=0; i<n;i++){
+        db=0;
+        for(j=0; j<n;j++){
+            if(tomb[j] == tomb[i]){
+                db++;
+            }
+        }
+    gyakorisagok[i] = db;
+    }
+    std::cout<<std::endl;
+    int maxertek=-999999;
+    for(i =0;i<n;i++){
+        if(gyakorisagok[i] > maxertek){
+            maxertek = gyakorisagok[i];
+        }
+    }
+    std::cout<< "a leggyakoribb ertekek: ";
+    for(i=0;i<n;i++){
+        if(gyakorisagok[i] == maxertek){
+                std::cout << tomb[i] << " ";
+            }
+        }
+    return 0;
+}
+

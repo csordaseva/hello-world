@@ -1,0 +1,20 @@
+#include <iostream>
+
+int main()
+{
+    //Olvasson be szamokat a billentyuzetrol 0 vegjelig es irja ki az atlagukat
+    float szam, osszeg=0, db =0;
+    float atlag;
+    do{
+        std::cout << "Kerek egy szamot: ";
+        std::cin >> szam;
+        if(szam!=0){
+        db++;
+        osszeg+=szam;
+        }
+    }while(szam != 0);
+
+    std::cout << "A beolvasott szamok atlaga: " << osszeg/db;
+
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main()
+{
+    //Olvasson be szamokat a billentyuzetrol 0 vegjelig es szamolja meg, hogy a 0-t kiveve melyik a legnagyobb beolvasott szam
+    int szam, maximum = -9999999999999;
+    do{
+        std::cout << "Kerek egy szamot: ";
+        std::cin >> szam;
+        if(szam> maximum && szam != 0){
+            maximum = szam;
+        }
+    }while(szam != 0);
+
+    std::cout << "A legnagyobb beolvasott szam: " << maximum;
+
+    return 0;
+}

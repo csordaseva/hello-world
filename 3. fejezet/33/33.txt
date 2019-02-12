@@ -1,0 +1,23 @@
+#include <iostream>
+
+int main()
+{
+    //tomb feltoltes
+    int i, n =10;
+    int tomb[n];
+    for(i = 0; i<n;i++){
+        std::cout << "Kerem a(z) " << i+1 << ". szamot: ";
+        std::cin >> tomb[i];
+        }
+    int maximum=-9999999999999, minimum = 999999999;
+    for(i = 0; i < n; i++){
+        if(tomb[i] > maximum){
+            maximum = tomb[i];
+        }
+        if(tomb[i] < minimum){
+            minimum = tomb[i];
+        }
+    }
+    std::cout << "A tomb legkisebb eleme: " << minimum << ", a legnagyobb eleme: " << maximum;
+    return 0;
+}

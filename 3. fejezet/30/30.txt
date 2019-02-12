@@ -1,0 +1,63 @@
+#include <iostream>
+
+int main()
+{
+    //egyszeru szamologep
+
+    int muvelet;
+    float elso, masodik;
+
+    std::cout << "Osszeadas: 1\n";
+    std::cout << "Kivonas: 2\n";
+    std::cout << "Szorzas: 3\n";
+    std::cout << "Osztas: 4\n";
+    std::cout << "Kilepes: 5\n";
+
+        std::cout << "Kerem valasszon a muveletek kozul: ";
+        std::cin >> muvelet;
+
+
+        switch(muvelet){
+            case 1:
+                std::cout << "Adja meg az elso szamot: ";
+                std::cin >> elso;
+                std::cout << "Adja meg a masodik szamot: ";
+                std::cin >> masodik;
+                std::cout << elso << " + " << masodik << " = " << elso+masodik;
+                break;
+            case 2:
+                std::cout << "Adja meg az elso szamot: ";
+                std::cin >> elso;
+                std::cout << "Adja meg a masodik szamot: ";
+                std::cin >> masodik;
+                std::cout << elso << " - " << masodik << " = " << elso-masodik;
+                break;
+            case 3:
+                std::cout << "Adja meg az elso szamot: ";
+                std::cin >> elso;
+                std::cout << "Adja meg a masodik szamot: ";
+                std::cin >> masodik;
+                std::cout << elso << " * " << masodik << " = " << elso*masodik;
+                break;
+            case 4:
+                std::cout << "Adja meg az elso szamot: ";
+                std::cin >> elso;
+                std::cout << "Adja meg a masodik szamot: ";
+                std::cin >> masodik;
+                if(masodik == 0){
+                    do{
+                    std::cout << "Uriember nem oszt nullaval, adjon meg egy masik szamot: ";
+                    std::cin >> masodik;
+                }while(masodik == 0);
+                }
+                std::cout << elso << " / " << masodik << " = " << elso/masodik;
+                break;
+            case 5:
+                std::cout << "Viszlat!";
+                break;
+            default:
+                std::cout << "Helytelen adat\n";
+        }
+    return 0;
+
+}

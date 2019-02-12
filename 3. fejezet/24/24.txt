@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+    //i1 pontszam eseten milyen jegy adhato a dolgozatra
+    //0-12: elegtelen
+    //13-18: elegseges
+    //19-27: kozepes
+    //28-31: jo
+    //32-39: jeles
+
+
+    int szam;
+    std::cout << "Kerek egy szamot: ";
+    std::cin >> szam;
+    if(szam >= 0 && szam <=12){
+        std::cout << "Az erdemjegy: elegtelen";
+    }else if(szam >= 13 && szam <= 18){
+        std::cout << "Az erdemjegy: elegseges";
+    }else if(szam >= 19 && szam <= 27){
+        std::cout << "Az erdemjegy: kozepes";
+    }else if(szam >= 28 && szam <= 31){
+        std::cout << "Az erdemjegy: jo";
+    }else if(szam >= 32 && szam <= 39){
+        std::cout << "Az erdemjegy: jeles";
+    }else{
+    std::cout << "Rossz adat";
+    }
+    return 0;
+}

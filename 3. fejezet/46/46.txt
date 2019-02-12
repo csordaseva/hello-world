@@ -1,0 +1,3 @@
+Az elozo feladatban legjobb esetben 1 lepesbol megvan az ertek, ha benne van, es log(n) lepes, ha nincs (es vegig kell menni az egeszen)
+
+Legrosszabb esetben (vagy ha nincs talalat) szinten O(log(n)) a futasi ido

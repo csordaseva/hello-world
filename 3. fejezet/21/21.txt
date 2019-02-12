@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main()
+{
+    //Olvasson be szamokat a billentyuzetrol 0 vegjelig es szamolja meg, hogy a 0-t kiveve melyik a legkisebb szam
+    int szam, minimum = 9999999999999;
+    do{
+        std::cout << "Kerek egy szamot: ";
+        std::cin >> szam;
+        if(szam< minimum && szam != 0){
+            minimum = szam;
+        }
+    }while(szam != 0);
+
+    std::cout << "A legkisebb beolvasott szam: " << minimum;
+
+    return 0;
+}

@@ -1,0 +1,42 @@
+#include <iostream>
+
+int main()
+{
+    //tomb rendezes csokkeno sorrendbe
+    int i,j, maximum= -999999999, maxindex, n =10;
+    int tomb[n] = {5,20,6,7,2,3,63,5,6,12}; //debuggolas miatt toltottem fel igy a tombot, igy gyorsabb volt
+    /*for(i = 0; i<n;i++){
+        std::cout << "Kerem a(z) " << i+1 << ". szamot: ";
+        std::cin >> tomb[i];
+        }*/
+    std::cout << "A csere elott:\n";
+    for(i = 0; i<n; i++){
+            std::cout << tomb[i] << " ";
+            if(tomb[i] > maximum){
+                maximum = tomb[i];
+                maxindex = i;
+            }
+    }
+    for(j = 0; j < n; j++){
+
+            std::cout << "\nAz aktualis legnagyobb elem: " << maximum << ", pozicioja: " << maxindex+1;
+            std::cout << "\n" << j+1 << ". es " << maxindex+1 << ". elem csereje utan:\n";
+
+            int csere;
+            csere = tomb[j];
+            tomb[j] = tomb [maxindex];
+            tomb[maxindex] = csere;
+            maxindex = j;
+            for(i = 0; i < n; i++){
+                std::cout << tomb[i] << " ";
+            }
+            maximum = -999999999;
+            for(i = maxindex+1; i < n; i++){
+                if(tomb[i] > maximum){
+                    maximum = tomb[i];
+                    maxindex = i;
+                }
+            }
+    }
+return 0;
+}

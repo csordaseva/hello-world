@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //Szamolja ki az i1 i2-dik hatvanyat, de csak akkor, ha i2 nem negativ.
+    int i1, i2;
+
+    std::cout << "Kerem az elso szamot: ";
+    std::cin >> i1;
+    std::cout << "Kerem a masodik szamot: ";
+    std::cin >> i2;
+
+    std::cout << i1 <<"^" << i2 << " = ";
+
+    (i1 == 0 && i2 == 0 || i2<0) ? std::cout << "nem ertelmezheto" : std::cout << std::pow(i1,i2);
+
+    return 0;
+}

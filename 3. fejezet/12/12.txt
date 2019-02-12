@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //Szamolja ki az i1 i2-dik hatvanyat, es kezelje azt az esetet is, amikor i2 negativ
+    int i1, i2;
+
+    std::cout << "Kerem az elso szamot: ";
+    std::cin >> i1;
+    std::cout << "Kerem a masodik szamot: ";
+    std::cin >> i2;
+
+    std::cout << i1 <<"^" << i2 << " = ";
+
+    (i1 == 0 && i2 <= 0) ? std::cout << "Hiba, ervenytelen adatok!" : std::cout << std::pow(i1,i2);
+
+    return 0;
+}

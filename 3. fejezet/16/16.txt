@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    //Hatarozza meg, hogy i1 negyzetszam-e
+
+    int i1;
+
+    std::cout << "Kerem a szamot: ";
+    std::cin >> i1;
+
+    int i=1;
+    double gyok = std::sqrt(i1);
+
+    while(i <= gyok && i*i!=i1){
+        i++;
+    }
+
+    (i > gyok) ? std::cout << "A(z) " << i1 << " nem negyzetszam." : std::cout << "A(z) " << i1 << " negyzetszam.";
+
+    return 0;
+}

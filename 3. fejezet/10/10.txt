@@ -1,0 +1,20 @@
+#include <iostream>
+
+int main()
+{
+    //Irassa ki egy mertani sorozat elso i1 elemet, ha az elso elem i2, es a szorzo i3
+    int i1, i2, i3;
+
+    std::cout << "Kerem az elso szamot: ";
+    std::cin >> i1;
+    std::cout << "Kerem a masodik szamot: ";
+    std::cin >> i2;
+    std::cout << "Kerem a harmadik szamot: ";
+    std::cin >> i3;
+    int i;
+    for(i=0; i < i1; i++){
+        std::cout << i2 <<" ";
+        i2= i2*i3;
+        }
+    return 0;
+}

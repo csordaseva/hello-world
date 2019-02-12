@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main()
+{
+    //tomb feltoltes
+    int i, n =10;
+    int tomb[n];
+    for(i = 0; i<n;i++){
+        std::cout << "Kerem a(z) " << i+1 << ". szamot: ";
+        std::cin >> tomb[i];
+        }
+    std::cout << "A beolvasott tomb:\n";
+    for(i = 0; i < n ; i++){
+        std::cout << tomb[i] << " ";
+    }
+    return 0;
+}

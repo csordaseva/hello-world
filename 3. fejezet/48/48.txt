@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main()
+{
+    //ket tomb hany eleme egyezik meg
+    int i, db=0, n=10;
+    int tomb[] = {2, 10, 15, 23, 48, 57, 63, 78, 84, 97};
+    int tomb2[] = {2, 9, 15, 22, 48, 57, 61, 70, 84, 97};
+
+
+    std::cout<< "Az egyik tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+
+    std::cout<< "\nA masik tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb2[i] << " ";
+    }
+
+    for(i=0; i<n; i++){
+        if(tomb[i] == tomb2[i]){
+            db++;
+        }
+    }
+    std::cout << std::endl;
+    std::cout<< db << " elem egyezik meg";
+
+
+    return 0;
+}

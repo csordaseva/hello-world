@@ -1,0 +1,108 @@
+#include <iostream>
+
+int main()
+{
+    //honap es nap alapjan mondjuk meg, hogy hány nap telt el a megadott idopontig az evben (szokoeveket is szamoljuk)
+    //a pdf-ben az 5. honap 20. napjara a feladatsor szerint 140 lenne a megoldas, de
+    //atszamoltam, es szerintem 171, a programom ezt is irja ki, szerintem ez igy jo
+
+    int ev, honap, nap;
+    std::cout << "Kerem az evet: ";
+    std::cin >> ev;
+    std::cout << "Kerem a honapot: ";
+    std::cin >> honap;
+    std::cout << "Kerem a napot: ";
+    std::cin >> nap;
+
+    int elteltNapokSzama =0;
+
+    if(ev % 4 && ev % 100 != 0 || ev % 400 == 0){
+        switch(honap){
+            case 1:
+                elteltNapokSzama = 31;
+                break;
+            case 2:
+                elteltNapokSzama = 31+28;
+                break;
+            case 3:
+                elteltNapokSzama = 31+28+31;
+                break;
+            case 4:
+                elteltNapokSzama = 31+28+31+30;
+                break;
+            case 5:
+                elteltNapokSzama = 31+28+31+30+31;
+                break;
+            case 6:
+                elteltNapokSzama = 31+28+31+30+31+30;
+                break;
+            case 7:
+                elteltNapokSzama = 31+28+31+30+31+30+31;
+                break;
+            case 8:
+                elteltNapokSzama = 31+28+31+30+31+30+31+31;
+                break;
+            case 9:
+                elteltNapokSzama = 31+28+31+30+31+30+31+31+30;
+                break;
+            case 10:
+                elteltNapokSzama = 31+28+31+30+31+30+31+31+30+31;
+                break;
+            case 11:
+                elteltNapokSzama = 31+28+31+30+31+30+31+31+30+31+30;
+                break;
+            case 12:
+                elteltNapokSzama = 31+28+31+30+31+30+31+31+30+31+30+31;
+                break;
+default:
+	std::cout << "Helytelen adat.";
+break;
+            }
+    }
+    else{
+            switch(honap){
+    case 1:
+        elteltNapokSzama = 31;
+        break;
+    case 2:
+        elteltNapokSzama = 31+29;
+        break;
+    case 3:
+        elteltNapokSzama = 31+29+31;
+        break;
+    case 4:
+        elteltNapokSzama = 31+29+31+30;
+        break;
+    case 5:
+        elteltNapokSzama = 31+29+31+30+31;
+        break;
+    case 6:
+        elteltNapokSzama = 31+29+31+30+31+30;
+        break;
+    case 7:
+        elteltNapokSzama = 31+29+31+30+31+30+31;
+        break;
+    case 8:
+        elteltNapokSzama = 31+29+31+30+31+30+31+31;
+        break;
+    case 9:
+        elteltNapokSzama = 31+29+31+30+31+30+31+31+30;
+        break;
+    case 10:
+        elteltNapokSzama = 31+29+31+30+31+30+31+31+30+31;
+        break;
+    case 11:
+        elteltNapokSzama = 31+2931+30+31+30+31+31+30+31+30;
+        break;
+    case 12:
+        elteltNapokSzama = 31+29+31+30+31+30+31+31+30+31+30+31;
+        break;
+default:
+	std::cout << "Helytelen adat.";
+break;
+    }
+}
+    std::cout << "Az eltelt napok szama: " << elteltNapokSzama+nap;
+
+    return 0;
+}

@@ -1,0 +1,43 @@
+#include <iostream>
+
+int main()
+{
+    //egyszeru menu megvalositas, kiegeszive azzal, hogy lehet ujra menupontot valasztani
+
+    int menupont;
+    char ch1;
+    std::cout << "Elso menupont: 1\n";
+    std::cout << "Masodik menupont: 2\n";
+    std::cout << "Harmadik menupont: 3\n";
+    std::cout << "Negyedik menupont: 4\n";
+
+    do{
+        std::cout << "Kerem valasszon a menupontok kozul: ";
+        std::cin >> menupont;
+
+
+        switch(menupont){
+            case 1:
+                std::cout << "Belepett az elso menupontba. Gratulalok!\n";
+                break;
+            case 2:
+                std::cout << "Belepett a masodik menupontba. Gratulalok!\n";
+                break;
+            case 3:
+                std::cout << "Belepett a harmadik menupontba. Gratulalok!\n";
+                break;
+            case 4:
+                std::cout << "Belepett a negyedik menupontba. Gratulalok!\n";
+                break;
+            default:
+                std::cout << "Helytelen adat\n";
+        }
+    std::cout << "Szeretne ujra valasztani? (i/n)\n";
+    std::cin >> ch1;
+    }
+    while(ch1 == 'i');
+
+    std::cout << "Koszi, hogy kiprobaltad ezt a csodas programot!";
+
+    return 0;
+}

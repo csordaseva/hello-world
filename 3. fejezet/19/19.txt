@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main()
+{
+    //Olvasson be szamokat a billentyuzetrol 0 vegjelig es szamolja meg, hogy a 0-t kiveve hany szamot olvasott be
+    int szam, db =0;
+    do{
+        std::cout << "Kerek egy szamot: ";
+        std::cin >> szam;
+        db++;
+    }while(szam != 0);
+
+    std::cout << db-1 << " szamot olvastam be";
+
+    return 0;
+}

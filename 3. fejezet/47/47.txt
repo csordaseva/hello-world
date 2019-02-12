@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main()
+{
+    //ket tomb elemenkent megegyezik-e
+    int i, n=10;
+    int tomb[] = {2, 9, 15, 23, 48, 57, 61, 70, 84, 97};
+    int tomb2[] = {2, 9, 15, 22, 48, 57, 61, 70, 84, 97};
+
+    bool egyformak = true;
+
+    std::cout<< "Az egyik tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb[i] << " ";
+    }
+
+    std::cout<< "\nA masik tomb:\n";
+    for(i = 0; i<n; i++){
+         std::cout << tomb2[i] << " ";
+    }
+
+    for(i=0; i<n; i++){
+        if(tomb[i] != tomb2[i]){
+            egyformak = false;
+        }
+    }
+
+    std::cout<< "\nA ket tomb ";
+    (egyformak) ? std::cout<< "megegyezik" : std::cout<<"nem egyezik meg";
+
+    return 0;
+}
