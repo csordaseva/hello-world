@@ -3,11 +3,11 @@
 #include <locale>
 
 typedef struct verem {
-	std::string szin;
+	char betu;
 	struct verem* kov;
 } Verem;
 
-Verem* elore_beszur(Verem* eleje, std::string szin);
+Verem* elore_beszur(Verem* eleje, char betu);
 Verem* kivesz_torol(Verem* eleje);
 bool uresVerem(Verem* verem);
 void kilistaz(Verem* verem);
@@ -17,47 +17,49 @@ int main()
 	setlocale(LC_ALL, "hun");
 	Verem* lista = NULL;
 	bool exit = false;
-	std::string kar;
-	std::string szin = "";
+	std::string muvelet;
+	std::string karakter = "";
 	do
 	{
-		std::cout << "Le akarsz tenni a polcra egy pólót vagy elvenni onnan? (l/e/kilépés az Enter gomb megnyomásával)" << std::endl;		
-		std::getline(std::cin,kar);
+		std::cout << "Betenni szeretnél a verembe, vagy kivenni belõle? (b/k/kilépés az Enter gomb megnyomásával)" << std::endl;		
+		std::getline(std::cin,muvelet);
 
-		if (kar == "l")
+		if (muvelet == "b")
 		{
-			std::cout << "Milyen színû pólót akarsz letenni?" << std::endl;
-			std::getline(std::cin, szin);
-			lista = elore_beszur(lista, szin);
+			std::cout << "Add meg a karaktert!" << std::endl;
+			std::getline(std::cin, karakter);
+			lista = elore_beszur(lista, karakter[0]);
 		}
-		else if (kar == "e") {
+		else if (muvelet == "k") {
 			if (!uresVerem(lista))
 				lista = kivesz_torol(lista);
 			else
-				std::cout << "A polc üres, sajnos nem tudsz már levenni róla semmit." << std::endl;
+				std::cout << "A verem üres, sajnos nem tudsz már kiszedni belõle semmit." << std::endl;
 		}
-		else if (kar == "")
+		else if (muvelet == "")
 			exit = true;
-		else
-			std::cout << "Hibás karakter." << std::endl;
 		
 		std::cout << std::endl;
-		kilistaz(lista);
+		std::cout << "A verem tartalma: " << std::endl << std::endl;
+		if (lista == NULL)
+			std::cout << "A verem még/már üres." << std::endl;		
+		else
+			kilistaz(lista);		
 		std::cout << std::endl;
 
 	} while (!exit);
 	
 }
 
-Verem* elore_beszur(Verem* eleje, std::string szin) {
+Verem* elore_beszur(Verem* eleje, char betu) {
 	Verem* uj = new Verem;
-	uj->szin = szin;
+	uj->betu = betu;
 	uj->kov = eleje;
 	return uj;
 }
 
 Verem* kivesz_torol(Verem* eleje) {
-	std::cout << "Kivetted a legfelsõ pólót, aminek a színe: " << eleje->szin << std::endl;
+	std::cout << "Kivetted a legfelsõ elemet, ami a(z) " << eleje->betu << " betû" << std::endl;
 	eleje = eleje->kov;
 	return eleje;
 }
@@ -72,5 +74,5 @@ bool uresVerem(Verem* verem) {
 void kilistaz(Verem* verem) {
 	Verem* it;
 	for (it = verem; it != NULL; it = it->kov)
-		std::cout << it->szin << std::endl;	
+		std::cout << it->betu << std::endl;	
 }
