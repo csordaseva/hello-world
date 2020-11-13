@@ -1,0 +1,98 @@
+#include <iostream>
+#include <string>
+#include <locale>
+#include <list>
+#include <exception>
+
+class Verem {
+
+public:
+	std::list<char> lista;
+
+public:
+
+	void push(char c) {
+		lista.push_front(c);
+	}
+
+	char pop() {
+		if (lista.empty())
+			throw "Exception: A verem üres.";
+		char out;
+		out = lista.front();
+		lista.pop_front();
+		return out;
+
+	}
+
+	void pop(char c) {
+		if (lista.empty())
+			throw "Exception: A verem üres.";
+		
+		if (lista.front() != c)
+			throw "Exception: A verem tetején nem a keresett karakter található, így nem sikerült kivenni.";
+		
+		lista.pop_front();
+	}
+
+	bool isEmpty() {
+		if (lista.size() == 0)
+			return true;
+		else
+			return false;
+	}
+
+	void kilistaz() {
+		for (std::list<char>::iterator it = lista.begin(); it != lista.end(); it++)
+			std::cout << *it << ' ' << std::endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "hun");
+	Verem verem;
+	bool exit = false;
+	std::string muvelet;
+	std::string karakter = "";
+	do
+	{
+		std::cout << "Betenni szeretnél a verembe, vagy kivenni belőle? (b/k/kilépés az Enter gomb megnyomásával)" << std::endl;
+		std::getline(std::cin, muvelet);
+
+		if (muvelet == "b")
+		{
+			std::cout << "Add meg a karaktert!" << std::endl;
+			std::getline(std::cin, karakter);
+			verem.push(karakter[0]);
+		}
+		else if (muvelet == "k") {
+			std::string c;
+			std::cout << "Kiveendő karakter: ";
+			std::getline(std::cin, c);
+			try {
+				verem.pop(c[0]);
+				std::cout << "Kivetted a legfelső elemet, ami a keresett " << c[0] << " betű" << std::endl;
+			}
+			catch (const char* msg) {
+				std::cerr << msg << std::endl;
+			}
+		}
+		else if (muvelet == "")
+			exit = true;
+
+		std::cout << std::endl;
+		std::cout << "A verem tartalma: " << std::endl << std::endl;
+		if (verem.isEmpty())
+			std::cout << "A verem még/már üres." << std::endl;
+		else
+			verem.kilistaz();
+		std::cout << std::endl;
+
+	} while (!exit);
+
+	if (exit)
+		std::cout << "Program vége." << std::endl;
+
+	return 0;
+}
