@@ -1,78 +1,88 @@
 #include <iostream>
 #include <string>
 #include <locale>
+#include <list>
+#include <exception>
 
-typedef struct verem {
-	char betu;
-	struct verem* kov;
-} Verem;
+class Verem {
 
-Verem* elore_beszur(Verem* eleje, char betu);
-Verem* kivesz_torol(Verem* eleje);
-bool uresVerem(Verem* verem);
-void kilistaz(Verem* verem);
+public:
+	std::list<char> lista;
+
+public:
+
+	void push(char c) {
+		lista.push_front(c);
+	}
+
+	char pop() {
+		if (lista.empty())
+		{
+			throw "A verem üres, sajnos nem tudsz már kiszedni belõle semmit.";
+		}
+		char out;
+		out = lista.front();
+		lista.pop_front();
+		return out;
+	}
+
+	bool isEmpty() {
+		if (lista.size() == 0)
+			return true;
+		else
+			return false;
+	}
+
+	void kilistaz() {
+		for (std::list<char>::iterator it = lista.begin(); it != lista.end(); it++)
+			std::cout << *it << ' ' << std::endl;
+	}
+};
 
 int main()
 {
 	setlocale(LC_ALL, "hun");
-	Verem* lista = NULL;
+	Verem verem;
 	bool exit = false;
 	std::string muvelet;
 	std::string karakter = "";
+	char kivett;
 	do
 	{
-		std::cout << "Betenni szeretnél a verembe, vagy kivenni belõle? (b/k/kilépés az Enter gomb megnyomásával)" << std::endl;		
-		std::getline(std::cin,muvelet);
+		std::cout << "Betenni szeretnél a verembe, vagy kivenni belõle? (b/k/kilépés az Enter gomb megnyomásával)" << std::endl;
+		std::getline(std::cin, muvelet);
 
 		if (muvelet == "b")
 		{
 			std::cout << "Add meg a karaktert!" << std::endl;
 			std::getline(std::cin, karakter);
-			lista = elore_beszur(lista, karakter[0]);
+			verem.push(karakter[0]);
 		}
 		else if (muvelet == "k") {
-			if (!uresVerem(lista))
-				lista = kivesz_torol(lista);
-			else
-				std::cout << "A verem üres, sajnos nem tudsz már kiszedni belõle semmit." << std::endl;
+			try{
+				kivett = verem.pop();
+				std::cout << "Kivetted a legfelsõ elemet, ami a(z) " << kivett << " betû" << std::endl;
+			}
+			catch (const char* msg){
+			std::cerr << msg << std::endl;
+			}
 		}
 		else if (muvelet == "")
 			exit = true;
-		
+
 		std::cout << std::endl;
 		std::cout << "A verem tartalma: " << std::endl << std::endl;
-		if (lista == NULL)
-			std::cout << "A verem még/már üres." << std::endl;		
+		if (verem.isEmpty())
+			std::cout << "A verem még/már üres." << std::endl;
 		else
-			kilistaz(lista);		
+			verem.kilistaz();
 		std::cout << std::endl;
 
 	} while (!exit);
-	
+
+	if (exit)
+		std::cout << "Program vége." << std::endl;
+
+	return 0;
 }
 
-Verem* elore_beszur(Verem* eleje, char betu) {
-	Verem* uj = new Verem;
-	uj->betu = betu;
-	uj->kov = eleje;
-	return uj;
-}
-
-Verem* kivesz_torol(Verem* eleje) {
-	std::cout << "Kivetted a legfelsõ elemet, ami a(z) " << eleje->betu << " betû" << std::endl;
-	eleje = eleje->kov;
-	return eleje;
-}
-
-bool uresVerem(Verem* verem) {
-	if (verem == NULL)
-		return true;
-	else
-		return false;
-}
-
-void kilistaz(Verem* verem) {
-	Verem* it;
-	for (it = verem; it != NULL; it = it->kov)
-		std::cout << it->betu << std::endl;	
-}
