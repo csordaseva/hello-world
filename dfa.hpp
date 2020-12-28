@@ -13,11 +13,13 @@ class Dfa {
 	public:
 		void kiir();
 		map<string, map<char, string>> getCsucsok() { return csucsok; }
-		void setCsucsok(map<string, map<char, string>> value) { value = csucsok; }
+		void setCsucsok(map<string, map<char, string>> value) { csucsok = value; }
 		void hozzaadCsucs(string csucs, char c, string szomszedok);
 		string szomszedok(string csucs);
-		string hovalep(string csucs, char c);
+		void hovalep(string csucs, char c);
+		void hovalepCsucsbol(string csucs);
 		void bejar(string kezdocsucs, string szo);
+		bool ervenyesLepes(string csucs, char c);
 
 		//szomszedok -> input: string, output: szomszédlista
 		//éleken karakterek, másik csúcsba milyen karakterrel lehet eljutni

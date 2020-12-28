@@ -4,7 +4,8 @@
 #include <string>
 
 struct keyNotFoundException {
-	std::string msg;
+	std::string node;
+	char key;
 };
 
 #endif
